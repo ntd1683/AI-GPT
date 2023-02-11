@@ -1,2 +1,12 @@
 # AI GPT
- 
+ Version php : > = 8.1
+ .htaccess : 
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteRule ^$ public/index.php [L]
+
+    RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
+</IfModule> 
