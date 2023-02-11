@@ -13,16 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/test',[AiGptController::class,'test']);
 
-Route::get('/write', function () {
-    $title = '';
-    $content = '';
-    return view('index', compact('title', 'content'));
-});
-
-Route::post('/processing', [AiGptController::class, 'index']);
+Route::post('/processing', [AiGptController::class, 'index'])->name('processing');
 
